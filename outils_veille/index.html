@@ -1,0 +1,44 @@
+<!--
+  Copyright (c) 2006-2013, JGraph Ltd
+  
+  Toolbar example for mxGraph. This example demonstrates using
+  existing cells as templates for creating new cells.
+-->
+<html>
+<head>
+	<title>Démo projet veille</title>
+	<meta charset="UTF-8">
+
+	<!-- Sets the basepath for the library if not in same directory -->
+	<script type="text/javascript">
+		mxBasePath = '../src';
+	</script>
+
+	<!-- Loads and initializes the library -->
+	<script type="text/javascript" src="mxClient.js"></script>
+    <script type="text/javascript" src="js/toolbar.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<!-- Calls the main function after the page has loaded. Container is dynamically created. -->
+<body>
+	<div id="nav">
+    	<button class="tablink" onclick="openPage('Home')" id='defaultOpen'>Accueil</button>
+	</div>
+
+    <div id="Home" class="tabcontent">
+        <h3>Commencez un nouveau diagramme</h3>
+        <button onclick="createOnglet('principal');">Créer un diagramme</button>
+    </div>
+
+    <div id='principal' class="tabcontent">
+    </div>
+	
+	<div id='second' class="tabcontent">
+	</div>
+    
+       
+</body>
+
+</html>
