@@ -26,7 +26,7 @@
               <div class="stencil-container"></div>
               <div class="paper-container"></div>
               <div class="inspector-container"></div>
-              <div class="navigator-container"></div>
+              <div class="navigator-container"><input class='file-upload-button' type="file" /></div>
         </div>
     </div>
 
@@ -63,8 +63,13 @@
         app = new App.MainView({ el: '#app' });
         themePicker = new App.ThemePicker({ mainView: app });
         themePicker.render().$el.appendTo(document.body);
-        window.addEventListener('load', function() {
-            app.graph.fromJSON(JSON.parse(App.config.sampleGraphs.emergencyProcedure));
+        $(document).on('change', '.file-upload-button', function(event) {
+            var reader = new FileReader();
+            reader.onload = function(event) {
+                var jsonObj = JSON.parse(event.target.result);
+                app.graph.fromJSON(jsonObj);
+            };
+            app.graph.fromJSON(reader.readAsText(event.target.files[0]));
         });
     </script>
 
