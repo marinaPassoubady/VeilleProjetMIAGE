@@ -48,10 +48,8 @@
 }
 
 /*
-	Adding Icons
-	
-	You can add icons to the context menu by adding
-	classes to the respective LI element(s)
+	Icones
+
 */
 
 .contextMenu LI.edit A { background-image: url(images/page_white_edit.png); }
